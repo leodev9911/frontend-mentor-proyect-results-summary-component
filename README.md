@@ -1,0 +1,1 @@
+# frontend-mentor-proyect-results-summary-component
