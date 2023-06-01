@@ -7,6 +7,26 @@
   <title>Frontend Mentor | Results summary component</title>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      /*Primary*/
+      --light-red: hsl(0, 100%, 67%);
+      --orangey-yellow: hsl(39, 100%, 56%);
+      --green-teal: hsl(166, 100%, 37%);
+      --cobalt-blue: hsl(234, 85%, 45%);
+
+      /*Gradients*/
+      --light-slate-bluebackground: hsl(252, 100%, 67%);
+      --light-royal-blue-background: hsl(241, 81%, 54%);
+      --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+      --persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+      /*Neutral*/
+      --white: hsl(0, 0%, 100%);
+      --pale-blue: hsl(221, 100%, 96%);
+      --light-lavender: hsl(241, 100%, 89%);
+      --dark-gray-blue: hsl(224, 30%, 27%);
+      --blue: #4532ec;
+    }
     * {
       padding: 0;
       margin: 0;
@@ -16,12 +36,162 @@
       font-size: 62.5%;
       font-family: 'Hanken Grotesk', sans-serif;
     }
+    main {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card__container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1000px;
+      height: 100vh;
+      max-height: 800px;
+    }
+    .card__container .blue__container {
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      background: linear-gradient(208.8deg, var(--light-slate-bluebackground), var(--light-royal-blue-background));
+      border-radius: 0px 0px 30px 30px;
+    }
+    .card__container .blue__container p:nth-child(1) {
+      font-size: 1.8rem;
+      color: #9C86F9;
+      font-weight: 700;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    .card__container .blue__container .circle__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(var(--Violet-blue-circle), var(--persian-blue-circle));
+    }
+    .card__container .blue__container .circle__container :nth-child(1) {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin: 0;
+    }
+    .card__container .blue__container .circle__container :nth-child(2) {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #9C86F9;
+    }
+    .card__container .blue__container p:nth-child(3) {
+      font-size: 2.2rem;
+      color: var(--white);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    .card__container .blue__container p:nth-child(4) {
+      font-size: 1.8rem;
+      color: #9C86F9;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .white__container {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+    }
+    .white__container h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+
+    }
+    .white__container .cards__container .card {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 50px;
+      padding: 0px 20px 0px 20px;
+      background-color: papayawhip;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .white__container .cards__container .card div {
+      display: flex;
+      align-items: center;
+    }
+    .white__container .cards__container .card div span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url(./assets/images/icon-reaction.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .white__container .cards__container .card div p {
+      margin-left: 14px;
+      font-size: 1.2rem;
+    }  
   </style>
 </head>
 <body>
   <main>
-    <section>
-      
+    <section class="card__container">
+      <div class="blue__container">
+        <p>Your Result</p>
+        <div class="circle__container">
+          <p>76</p>
+          <p>of 100</p>
+        </div>
+        <p>Great</p>
+        <p>You scored higher than 65% of the people who have taken these tests</p>
+      </div>
+      <div class="white__container">
+        <h1>Summary</h1>
+        <div class="cards__container">
+          <div class="card">
+            <div class="left__container">
+              <span class="thunder"></span>
+              <p>Reaction</p>
+            </div>
+            <p><b>80</b> / 100</p>
+          </div>
+          <div class="card">
+            <div class="left__container">
+              <span class="brain"></span>
+              <p>Memory</p>
+            </div>            
+            <p><b>92</b> / 100</p>
+          </div>
+          <div class="card">
+            <div class="left__container"> 
+              <span class="verbal"></span>
+              <p>Verbal</p>
+            </div>            
+            <p><b>61</b> / 100</p>
+          </div>
+          <div class="card">
+            <div class="left__container">
+              <span class="visual"></span>
+              <p>Visual</p>
+            </div>            
+            <p><b>72</b> / 100</p>
+          </div>
+        </div>
+        <button>Continue</button>
+      </div>
     </section>
   </main>
 </body>
