@@ -45,11 +45,13 @@
     }
     .card__container {
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: column;
       width: 100%;
-      max-width: 1000px;
+      max-width: 800px;
       height: 100vh;
-      max-height: 800px;
+      max-height: 500px;
     }
     .card__container .blue__container {
       display: grid;
@@ -58,7 +60,7 @@
       text-align: center;
       padding: 20px;
       width: 100%;
-      max-width: 500px;
+      max-width: 400px;
       background: linear-gradient(208.8deg, var(--light-slate-bluebackground), var(--light-royal-blue-background));
       border-radius: 0px 0px 30px 30px;
     }
@@ -66,7 +68,7 @@
       font-size: 1.8rem;
       color: #9C86F9;
       font-weight: 700;
-      margin-top: 10px;
+      margin-top: 60px;
       margin-bottom: 20px;
     }
     .card__container .blue__container .circle__container {
@@ -106,7 +108,7 @@
     }
     .white__container {
       width: 100%;
-      max-width: 500px;
+      max-width: 400px;
       padding: 20px;
     }
     .white__container h1 {
@@ -123,9 +125,18 @@
       width: 100%;
       height: 50px;
       padding: 0px 20px 0px 20px;
-      background-color: papayawhip;
+      background-color: #fff7f5;
       border-radius: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+    }
+    .white__container .cards__container .card:nth-child(2) {
+      background-color: #fffcf1;
+    }
+    .white__container .cards__container .card:nth-child(3) {
+      background-color: #f2fbfa;
+    }
+    .white__container .cards__container .card:nth-child(4) {
+      background-color: #f3f3ff;
     }
     .white__container .cards__container .card div {
       display: flex;
@@ -140,11 +151,71 @@
       background-repeat: no-repeat;
       background-size: contain;
     }
-    .white__container .cards__container .card div p {
+    .white__container .cards__container .card div .brain {
+      background-image: url(./assets/images/icon-memory.svg);
+    }
+    .white__container .cards__container .card div .chat {
+      background-image: url(./assets/images/icon-verbal.svg);
+    }
+    .white__container .cards__container .card div .eye {
+      background-image: url(./assets/images/icon-visual.svg);
+    }
+    .white__container .cards__container .card p {
+      font-size: 1.4rem;
+    }
+    .white__container .cards__container .card .left__container p {
       margin-left: 14px;
-      font-size: 1.2rem;
-    }  
-  </style>
+      color: var(--light-red);
+      font-weight: 700;
+    } 
+    .white__container .cards__container .card .left__container .memory {
+      color: var(--orangey-yellow);
+    } 
+    .white__container .cards__container .card .left__container .verbal {
+      color: var(--green-teal);
+    } 
+    .white__container .cards__container .card .left__container .visual {
+      color: var(--cobalt-blue);
+    } 
+    button {
+      width: 100%;
+      height: 54px;
+      border-radius: 40px;
+      background-color: var(--dark-gray-blue);
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: 'Hanken Grotesk', sans-serif;
+      color: white;
+    }
+    @media (min-width: 720px) {
+      .card__container {
+        flex-direction: row;
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+      }
+      .card__container .blue__container {
+        height: 500px;
+        border-radius: 30px;
+      }
+      .card__container .blue__container p:nth-child(1) {
+        font-size: 2.2rem;
+        margin-top: 10px;
+      }
+      .card__container .blue__container .circle__container {
+        width: 160px;
+        height: 160px;
+      }
+      .white__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 500px;
+      }
+      .white__container h1 {
+        font-size: 2.6rem;
+      }
+    }
+</style>
 </head>
 <body>
   <main>
@@ -171,21 +242,21 @@
           <div class="card">
             <div class="left__container">
               <span class="brain"></span>
-              <p>Memory</p>
+              <p class="memory">Memory</p>
             </div>            
             <p><b>92</b> / 100</p>
           </div>
           <div class="card">
             <div class="left__container"> 
-              <span class="verbal"></span>
-              <p>Verbal</p>
+              <span class="chat"></span>
+              <p class="verbal">Verbal</p>
             </div>            
             <p><b>61</b> / 100</p>
           </div>
           <div class="card">
             <div class="left__container">
-              <span class="visual"></span>
-              <p>Visual</p>
+              <span class="eye"></span>
+              <p class="visual">Visual</p>
             </div>            
             <p><b>72</b> / 100</p>
           </div>
